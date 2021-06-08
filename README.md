@@ -5,8 +5,8 @@ This repository is the official implementation of [Antipodes of Label Differenti
 ## Citation
 ```bibtex
 @misc{malek2021antipodes,
-      title={Antipodes of Label Differential Privacy: PATE and ALIBI},
-      author={Mani Malek and Ilya Mironov and Karthik Prasad and Igor Shilov and Florian Tramèr},
+      title={Antipodes of Label Differential Privacy: {PATE} and {ALIBI}},
+      author={Mani Malek and Ilya Mironov and Karthik Prasad and Igor Shilov and Florian Tram{\`e}r},
       year={2021},
       eprint={2106.03408},
       archivePrefix={arXiv},
