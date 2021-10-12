@@ -32,3 +32,18 @@ def fill_canaries(dataset, num_classes, N=1000, seed=None):
     dataset.targets = list(targets)
 
     return dataset
+
+
+def gen_seeds_for_non_overlapping_pos(
+    dataset, num_classes, seed=11337, num_canaries=100, num_partitions=10
+):
+    l = []
+    while len(l) < num_partitions:
+        cur_seed, cur_pos = fill_canaries(
+            dataset, num_classes, N=num_canaries, seed=seed
+        )
+        if all(len(cur_pos & old_seed_pos[1]) == 0 for old_seed_pos in l):
+            print((cur_seed, cur_pos))
+            l.append((cur_seed, cur_pos))
+        seed += 11
+    return l
