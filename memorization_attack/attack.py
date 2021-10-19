@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
 
 """
 MIT License
@@ -116,7 +117,7 @@ def compute_eps(c1, c2, verbose=False):
 
             # if all the guesses are correct, treat the accuracy as a Binomial with empirical probability of 1.0
             if acc_mean == 1:
-                # only apply this correction at large enough  sample sizes, else discard as a fluke 
+                # only apply this correction at large enough  sample sizes, else discard as a fluke
                 if N_effective > 50:
                     acc_low = min(acc_low, 1 - 3 / N_effective)
                 else:
@@ -141,7 +142,7 @@ def compute_eps(c1, c2, verbose=False):
             eps_low = el
             eps_high = eh
             best_threshold = t
-        elif (el == eps_low) & (eh > eps_high) & (eh != np.inf): 
+        elif (el == eps_low) & (eh > eps_high) & (eh != np.inf):
             eps_high = eh
             best_threshold = t
     return eps_low, eps_high
@@ -167,7 +168,7 @@ def get_confidences(confs_on_canary, canary_labels, canary_positions, train_data
     for i in range(1000):
         assert true_labels[i] not in incorrect_labels[i], i
         assert canary_labels[i] not in incorrect_labels[i], i
-    
+
     return c1, c2
 
 
@@ -205,7 +206,7 @@ for data in ["cifar10", "cifar100"]:
             confs_on_canary = np.load(f"confs/confs_{data}_{algo}_{acc}.npy")
 
             c1, c2 = get_confidences(confs_on_canary, canary_labels, canary_positions, train_dataset)
-            eps_low, eps_high = compute_eps(c1, c2) 
+            eps_low, eps_high = compute_eps(c1, c2)
             print(f"{data}-{algo}-{acc}: ({eps_low:.1f}, {eps_high:.1f})")
     print()
 
@@ -231,5 +232,3 @@ for data in ["cifar10", "cifar100"]:
             eps_low, eps_high = compute_eps(c1, c2)
             print(f"{data}-{algo}-{acc}-10x100: ({eps_low:.1f}, {eps_high:.1f})")
     print()
-
-

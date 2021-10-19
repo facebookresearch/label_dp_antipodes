@@ -93,7 +93,7 @@ Results are summarized in Tables 1 and 2 of our paper.
 
 
 ## License
-This code is licensed under MIT License.
+The majority of facebookresearch/label_dp_antipodes is licensed under CC-BY-NC, however portions of the project are available under separate license terms: kekmodel/FixMatch-pytorch, kuangliu/pytorch-cifar, and facebookresearch/label_dp_antipodes/memorization_attack are licensed under MIT license, tensorflow/privacy is licensed under Apache-2.0 license.
 
 
 ## Acknowledgements

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# (c) Facebook, Inc. and its affiliates.
+# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
 
 from .resnet import resnet18
 from .wide_resnet import wideresnet

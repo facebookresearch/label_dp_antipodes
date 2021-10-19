@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
 
 # Copyright 2017 The 'Scalable Private Learning with PATE' Authors All Rights Reserved.
 # Orignal: https://github.com/tensorflow/privacy/tree/master/research/pate_2018/ICLR2018
