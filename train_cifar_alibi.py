@@ -460,8 +460,8 @@ def main():
         lr=args.lr,
         batch_size=args.bs,
         epochs=args.epochs,
-        momentum=0.9,
-        weight_decay=1e-4,
+        momentum=args.momentum,
+        weight_decay=args.weight_decay,
         random_aug=False,
     )
 
