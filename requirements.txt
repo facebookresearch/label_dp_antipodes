@@ -1,6 +1,6 @@
+opacus==0.15.0
 torch
 torchvision
 simple_parsing
 tqdm
-opacus
 tensorboard
